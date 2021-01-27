@@ -1,0 +1,35 @@
+{
+  "application.js": "/packs/js/application-a0f19e0b4bcd2a1657c6.js",
+  "application.js.map": "/packs/js/application-a0f19e0b4bcd2a1657c6.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-a0f19e0b4bcd2a1657c6.js"
+      ],
+      "js.map": [
+        "/packs/js/application-a0f19e0b4bcd2a1657c6.js.map"
+      ]
+    },
+    "hello_react": {
+      "js": [
+        "/packs/js/hello_react-7a2d78919040a5da5501.js"
+      ],
+      "js.map": [
+        "/packs/js/hello_react-7a2d78919040a5da5501.js.map"
+      ]
+    },
+    "server_rendering": {
+      "js": [
+        "/packs/js/server_rendering-75f4d56cec8051b1f0a0.js"
+      ],
+      "js.map": [
+        "/packs/js/server_rendering-75f4d56cec8051b1f0a0.js.map"
+      ]
+    }
+  },
+  "hello_react.js": "/packs/js/hello_react-7a2d78919040a5da5501.js",
+  "hello_react.js.map": "/packs/js/hello_react-7a2d78919040a5da5501.js.map",
+  "media/components/assets/grant-lemons-jTCLppdwSEc-unsplash.jpg": "/packs/media/components/assets/grant-lemons-jTCLppdwSEc-unsplash-2cdc0853973d930451e6e8dc53ec0f44.jpg",
+  "server_rendering.js": "/packs/js/server_rendering-75f4d56cec8051b1f0a0.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-75f4d56cec8051b1f0a0.js.map"
+}
