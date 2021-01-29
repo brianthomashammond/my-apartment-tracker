@@ -1,0 +1,2 @@
+# Exclude babel-loader-node-modules from git Linguist percentages
+babel-loader-node-modules/* linguist-vendored
