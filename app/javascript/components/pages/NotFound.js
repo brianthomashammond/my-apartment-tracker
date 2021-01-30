@@ -5,7 +5,7 @@ export default class NotFound extends Component {
         return (
             <>
                 <div id="notFound">
-                    <h3>NotFound</h3>
+                    <h3>Not Found</h3>
                 </div>
             </>
         )

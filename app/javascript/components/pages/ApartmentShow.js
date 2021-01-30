@@ -19,13 +19,13 @@ export default class ApartmentShow extends Component {
                     <div className="form-button-wrapper">
                         {!this.props.logged_in &&
                             <Link to={"/apartmentindex"} className="button">
-                                Go to All Apartments
+                                Go to All Listings
                             </Link>
                         }
                         {this.props.logged_in &&
                             <>
                                 <Link to={`/apartmentedit/${apartment.id}`} className="button">
-                                    Edit this Apartment
+                                    Edit this Listing
                                 </Link>
                             </>
                         }

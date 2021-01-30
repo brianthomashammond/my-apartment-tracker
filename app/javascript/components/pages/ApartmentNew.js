@@ -37,7 +37,6 @@ export default class ApartmentNew extends Component {
   render() {
     return (
       <>
-        <h3>Add an Apartment</h3>
         <div className="body-container">
           <div className="form">
             <Form>
@@ -190,7 +189,7 @@ export default class ApartmentNew extends Component {
                   className="button"
                   onClick={this.handleSubmit}
                 >
-                  Add a New Apartment
+                  Add a New Listing
                 </Button>
               </div>
             </Form>

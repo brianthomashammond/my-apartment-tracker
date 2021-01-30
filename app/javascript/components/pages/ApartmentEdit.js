@@ -45,7 +45,6 @@ export default class ApartmentEdit extends Component {
     render() {
         return (
             <>
-                <h3>Edit Apartment</h3>
                 <div className="body-container">
                     <div className="form">
                         <Form>
@@ -147,21 +146,6 @@ export default class ApartmentEdit extends Component {
                                                             class="custom-control-input custom-control-input-black" id="customCheck1" />
                                                         <label class="custom-control-label" for="customCheck1">Yes</label>
                                                     </div>
-                                                    {/* <FormGroup className="custom-control custom-radio custom-radio-black" check>
-                                                        <Label className="custom-control-label" htmlFor="customRadio1"
-                                                            check>
-                                                            <Input
-                                                                type="radio"
-                                                                name="pets"
-                                                                value="yes"
-                                                                checked={this.state.form.pets === "yes"}
-                                                                onChange={this.handleChange}
-                                                                className="custom-control-input custom-control-input-black"
-                                                                id="customRadio1"
-                                                            />
-                                                            Yes
-                                                        </Label>
-                                                    </FormGroup> */}
                                                 </Col>
                                                 <Col>
                                                     <div class="custom-control custom-radio custom-radio-black">
@@ -172,18 +156,6 @@ export default class ApartmentEdit extends Component {
                                                             onChange={this.handleChange} class="custom-control-input custom-control-input-black" id="customCheck2" />
                                                         <label class="custom-control-label" for="customCheck2">No</label>
                                                     </div>
-                                                    {/* <FormGroup check>
-                                                        <Label check>
-                                                            <Input
-                                                                type="radio"
-                                                                name="pets"
-                                                                value="no"
-                                                                checked={this.state.form.pets === "no"}
-                                                                onChange={this.handleChange}
-                                                            />
-                                No
-                                </Label>
-                                                    </FormGroup> */}
                                                 </Col>
                                             </Row>
                                         </FormGroup>
@@ -207,7 +179,7 @@ export default class ApartmentEdit extends Component {
                                     className="button"
                                     onClick={this.handleSubmit}
                                 >
-                                    Edit this Apartment
+                                    Edit this Listing
                             </Button>
                             </div>
                         </Form>

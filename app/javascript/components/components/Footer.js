@@ -26,10 +26,10 @@ export default class Footer extends Component {
                                     <a href={sign_out_route}>Sign Out</a>
                                 </NavItem>
                                 <NavItem>
-                                    <a href="/apartmentnew">Create a New Apartment</a>
+                                    <a href="/apartmentnew">Create a New Listing</a>
                                 </NavItem>
                                 <NavItem>
-                                    <a href="/myapartmentindex">See My Apartments</a>
+                                    <a href="/myapartmentindex">See My Listings</a>
                                 </NavItem>
                             </>
                         }
