@@ -111,30 +111,32 @@ export default class App extends Component {
       sign_up_route,
       current_user
     } = this.props
+
     return (
       <Router>
+
         <Header />
 
         <Switch>
-
           {/* HOME */}
           <Route exact path="/" component={Home} />
 
           {/* APARTMENT INDEX */}
           <Route path="/apartmentindex" render={(props) => <ApartmentIndex apartments={this.state.apartments} />} />
 
-
+          {/*APARTMENT SHOW*/}
           <Route path="/apartmentshow/:id"
             render={(props) => {
               let localid = props.match.params.id
               let apartment = this.state.apartments.find(apartment =>
                 apartment.id === parseInt(localid))
               return (
-                <ApartmentShow apartment={apartment} logged_in={logged_in} />
+                <ApartmentShow apartment={apartment} current_user= {current_user} logged_in={logged_in} />
               )
             }}
           />
 
+          {/*APARTMENT NEW*/}
           {logged_in &&
             <Route
               path="/apartmentnew"
@@ -147,6 +149,7 @@ export default class App extends Component {
             />
           }
 
+          {/*MY APARTMENT INDEX*/}
           {logged_in &&
             <Route
               path="/myapartmentindex"
@@ -163,6 +166,7 @@ export default class App extends Component {
             />
           }
 
+          {/*APARTMENT EDIT*/}
           {logged_in &&
             <Route
               path="/apartmentedit/:id"
@@ -180,8 +184,8 @@ export default class App extends Component {
             />
           }
 
+          {/*NOT FOUND*/}
           <Route component={NotFound} />
-
         </Switch>
 
         <Footer

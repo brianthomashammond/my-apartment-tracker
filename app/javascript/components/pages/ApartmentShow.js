@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default class ApartmentShow extends Component {
 
     render() {
-        const { apartment } = this.props
+        const { apartment, current_user, logged_in } = this.props
         return (
             <>
                 <div className="show-body">
@@ -17,12 +17,8 @@ export default class ApartmentShow extends Component {
                     <p>Bathrooms: {apartment.bathrooms}</p>
                     <p>Pets allowed?: {apartment.pets}</p>
                     <div className="form-button-wrapper">
-                        {!this.props.logged_in &&
-                            <Link to={"/apartmentindex"} className="button">
-                                Go to All Listings
-                            </Link>
-                        }
-                        {this.props.logged_in &&
+                        {logged_in && 
+                        current_user.id === apartment.user_id &&
                             <>
                                 <Link to={`/apartmentedit/${apartment.id}`} className="button">
                                     Edit this Listing
