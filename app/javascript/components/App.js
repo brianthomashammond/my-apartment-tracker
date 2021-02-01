@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import PropTypes from "prop-types"
 
 import Header from "./components/Header"
 import Footer from "./components/Footer"
@@ -12,13 +11,10 @@ import ApartmentNew from "./pages/ApartmentNew"
 import ApartmentShow from "./pages/ApartmentShow"
 import MyApartmentIndex from "./pages/MyApartmentIndex"
 
-// import mockApartments from './mockApartments.js'
-
 import {
   BrowserRouter as Router,
   Route,
   Switch,
-  NavLink
 } from 'react-router-dom'
 
 
