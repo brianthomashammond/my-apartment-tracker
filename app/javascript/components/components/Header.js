@@ -7,7 +7,6 @@ export default class Header extends Component {
                 <div id="header">
                     <h1>My Apartment Tracker</h1>
                 </div>
-
             </>
         )
     }

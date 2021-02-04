@@ -8,7 +8,6 @@ export default class Footer extends Component {
             sign_in_route,
             sign_out_route,
             sign_up_route,
-            current_user
         } = this.props
         return (
             <>
