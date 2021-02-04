@@ -12,186 +12,203 @@ import ApartmentShow from "./pages/ApartmentShow"
 import MyApartmentIndex from "./pages/MyApartmentIndex"
 
 import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
+    BrowserRouter as Router,
+    Route,
+    Switch,
 } from 'react-router-dom'
 
 
 export default class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      apartments: []
-    }
-  }
-
-  componentDidMount() {
-    this.getApartments()
-  }
-
-  getApartments = () => {
-    fetch("/apartments")
-      .then(response => {
-        return response.json()
-      })
-      .then(payload => {
-        this.setState({ apartments: payload })
-      })
-      .catch(errors => {
-        console.log("index errors:", errors);
-      })
-  }
-
-  createNewApartment = (apartment) => {
-    return fetch("/apartments", {
-      body: JSON.stringify(apartment),
-      headers: {
-        "Content-Type": "application/json"
-      },
-      method: "POST"
-    })
-      .then(response => {
-        // if (response.status === 200) {
-        //   this.apartmentIndex()
-        // }
-        // return response
-        this.getApartments()
-      })
-      .catch(errors => {
-        console.log("create errors:", errors)
-      })
-  }
-
-  updateApartment = (apartment, id) => {
-    return fetch(`/apartments/${id}`, {
-      body: JSON.stringify(apartment),
-      headers: {
-        "Content-Type": "application/json"
-      },
-      method: "PATCH"
-    })
-      .then(response => {
-        if (response.status === 200) {
-          this.getApartments()
+    constructor(props) {
+        super(props)
+        this.state = {
+            apartments: [],
         }
-        return response
-      })
-      .catch(errors => {
-        console.log("edit errors", errors)
-      })
-  }
+    }
+    
+    
 
-  deleteApartment = (id) => {
-    return fetch(`apartments/${id}`, {
-      hedaers: {
-        "Content-Type": "application/json"
-      },
-      method: "DELETE"
-    })
-      .then(response => {
-        alert("Remove this listing?")
+    componentDidMount() {
         this.getApartments()
-        return response
-      })
-      .catch(errors => {
-        console.log("delete errors", errors);
-      })
-  }
+    }
 
-  render() {
-    const {
-      logged_in,
-      sign_in_route,
-      sign_out_route,
-      sign_up_route,
-      current_user
-    } = this.props
+    getApartments = () => {
+        fetch("/apartments")
+        .then(response => {
+            return response.json()
+        })
+        .then(payload => {
+            this.setState({ apartments: payload })
+        })
+        .catch(errors => {
+            console.log("index errors:", errors);
+        })
+    }
 
-    return (
-      <Router>
+    createNewApartment = (apartment) => {
+        return fetch("/apartments", {
+            body: JSON.stringify(apartment),
+            headers: {
+                "Content-Type": "application/json"
+            },
+            method: "POST"
+        })
+        .then(response => {
+            this.getApartments()
+        })
+        .catch(errors => {
+            console.log("create errors:", errors)
+        })
+    }
 
-        <Header />
+    updateApartment = (apartment, id) => {
+        return fetch(`/apartments/${id}`, {
+            body: JSON.stringify(apartment),
+            headers: {
+                "Content-Type": "application/json"
+            },
+            method: "PATCH"
+        })
+        .then(response => {
+            if (response.status === 200) {
+                this.getApartments()
+            }
+            return response
+        })
+        .catch(errors => {
+            console.log("edit errors", errors)
+        })
+    }
 
-        <Switch>
-          {/* HOME */}
-          <Route exact path="/" component={Home} />
+    deleteApartment = (id) => {
+        return fetch(`apartments/${id}`, {
+            headers: {
+                "Content-Type": "application/json"
+            },
+            method: "DELETE"
+        })
+        .then(response => {
+            alert("Remove this listing?")
+            this.getApartments()
+            return response
+        })
+        .catch(errors => {
+            console.log("delete errors", errors);
+        })
+    }
 
-          {/* APARTMENT INDEX */}
-          <Route path="/apartmentindex" render={(props) => <ApartmentIndex apartments={this.state.apartments} />} />
+    render() {
+        const {
+            logged_in,
+            sign_in_route,
+            sign_out_route,
+            sign_up_route,
+            current_user,
+        } = this.props
 
-          {/*APARTMENT SHOW*/}
-          <Route path="/apartmentshow/:id"
-            render={(props) => {
-              let localid = props.match.params.id
-              let apartment = this.state.apartments.find(apartment =>
-                apartment.id === parseInt(localid))
-              return (
-                <ApartmentShow apartment={apartment} current_user= {current_user} logged_in={logged_in} />
-              )
-            }}
-          />
+        const { apartments } = this.state
 
-          {/*APARTMENT NEW*/}
-          {logged_in &&
-            <Route
-              path="/apartmentnew"
-              render={(props) =>
-                <ApartmentNew
-                  createNewApartment={this.createNewApartment}
-                  current_user={current_user}
-                />
-              }
-            />
-          }
+        return (
+            <Router>
 
-          {/*MY APARTMENT INDEX*/}
-          {logged_in &&
-            <Route
-              path="/myapartmentindex"
-              render={(props) => {
-                let user = current_user.id
-                let apartments =
-                  this.state.apartments.filter(apartment => apartment.user_id === user)
-                return (
-                  <MyApartmentIndex
-                    apartments={apartments}
-                    deleteApartment={this.deleteApartment} />
-                )
-              }}
-            />
-          }
+                <Header />
 
-          {/*APARTMENT EDIT*/}
-          {logged_in &&
-            <Route
-              path="/apartmentedit/:id"
-              render={(props) => {
-                let id = props.match.params.id
-                let apartment = this.state.apartments.find(apartment => apartment.id === parseInt(id))
-                return (
-                  <ApartmentEdit
-                    updateApartment={this.updateApartment}
+                <Switch>
+                    {/* HOME */}
+                    <Route exact path="/" component={Home} />
+
+                    {/* APARTMENT INDEX */}
+                    <Route
+                        path="/apartmentindex"
+                        render={(props) =>
+                            <ApartmentIndex apartments={ apartments } />
+                        }
+                    />
+
+                    {/*APARTMENT SHOW*/}
+                    <Route
+                        path="/apartmentshow/:id"
+                        render={(props) => {
+                            let localid = props.match.params.id
+                            let apartment = apartments.find(apartment =>
+                                apartment.id === parseInt(localid)
+                            )
+                        return (
+                            <ApartmentShow
+                                apartment={apartment}
+                                current_user= {current_user}
+                                logged_in={logged_in}
+                            />
+                        )
+                        }}
+                    />
+
+                    {/*APARTMENT NEW*/}
+                    {logged_in &&
+                        <Route
+                            path="/apartmentnew"
+                            render={(props) =>
+                                <ApartmentNew
+                                    createNewApartment={this.createNewApartment}
+                                    current_user={current_user}
+                                />
+                            }
+                        />
+                    }
+
+                    {/*MY APARTMENT INDEX*/}
+                    {logged_in &&
+                        <Route
+                            path="/myapartmentindex"
+                            render={(props) => {
+                                let user = current_user.id
+                                let apartments = apartments.filter(apartment => 
+                                    apartment.user_id === user
+                                )
+
+                                return (
+                                    <MyApartmentIndex
+                                        apartments={apartments}
+                                        deleteApartment={this.deleteApartment}
+                                    />
+                                )
+                            }}
+                        />
+                    }
+
+                    {/*APARTMENT EDIT*/}
+                    {logged_in &&
+                        <Route
+                            path="/apartmentedit/:id"
+                            render={(props) => {
+                                let id = props.match.params.id
+                                let apartment = apartments.find(apartment =>
+                                    apartment.id === parseInt(id)
+                                )
+
+                            return (
+                                <ApartmentEdit
+                                    updateApartment={this.updateApartment}
+                                    current_user={current_user}
+                                    apartment={apartment}
+                                />
+                            )
+                            }}
+                        />
+                    }
+
+                    {/*NOT FOUND*/}
+                    <Route component={NotFound} />
+                </Switch>
+
+                <Footer
+                    logged_in={logged_in}
+                    sign_in_route={sign_in_route}
+                    sign_out_route={sign_out_route}
+                    sign_up_route={sign_up_route}
                     current_user={current_user}
-                    apartment={apartment}
-                  />
-                )
-              }}
-            />
-          }
-
-          {/*NOT FOUND*/}
-          <Route component={NotFound} />
-        </Switch>
-
-        <Footer
-          logged_in={logged_in}
-          sign_in_route={sign_in_route}
-          sign_out_route={sign_out_route}
-          sign_up_route={sign_up_route}
-          current_user={current_user}
-        />
-      </Router>
-    );
-  }
+                />
+            </Router>
+        )
+    }
 }
