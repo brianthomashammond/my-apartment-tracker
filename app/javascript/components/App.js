@@ -135,9 +135,9 @@ export default class App extends Component {
                             )
                         return (
                             <ApartmentShow
-                                apartment={apartment}
-                                current_user= {current_user}
-                                logged_in={logged_in}
+                                apartment={ apartment }
+                                current_user={ current_user }
+                                logged_in={ logged_in }
                             />
                         )
                         }}
@@ -149,8 +149,8 @@ export default class App extends Component {
                             path="/apartmentnew"
                             render={(props) =>
                                 <ApartmentNew
-                                    createNewApartment={this.createNewApartment}
-                                    current_user={current_user}
+                                    createNewApartment={ this.createNewApartment }
+                                    current_user={ current_user }
                                 />
                             }
                         />
@@ -162,14 +162,14 @@ export default class App extends Component {
                             path="/myapartmentindex"
                             render={(props) => {
                                 let user = current_user.id
-                                let apartments = apartments.filter(apartment => 
+                                let apartments = this.state.apartments.filter(apartment => 
                                     apartment.user_id === user
                                 )
 
                                 return (
                                     <MyApartmentIndex
-                                        apartments={apartments}
-                                        deleteApartment={this.deleteApartment}
+                                        apartments={ apartments }
+                                        deleteApartment={ this.deleteApartment }
                                     />
                                 )
                             }}
@@ -188,9 +188,9 @@ export default class App extends Component {
 
                             return (
                                 <ApartmentEdit
-                                    updateApartment={this.updateApartment}
-                                    current_user={current_user}
-                                    apartment={apartment}
+                                    updateApartment={ this.updateApartment }
+                                    current_user={ current_user }
+                                    apartment={ apartment }
                                 />
                             )
                             }}
@@ -198,15 +198,15 @@ export default class App extends Component {
                     }
 
                     {/*NOT FOUND*/}
-                    <Route component={NotFound} />
+                    <Route component={ NotFound } />
                 </Switch>
 
                 <Footer
-                    logged_in={logged_in}
-                    sign_in_route={sign_in_route}
-                    sign_out_route={sign_out_route}
-                    sign_up_route={sign_up_route}
-                    current_user={current_user}
+                    logged_in={ logged_in }
+                    sign_in_route={ sign_in_route }
+                    sign_out_route={ sign_out_route }
+                    sign_up_route={ sign_up_route }
+                    current_user={ current_user }
                 />
             </Router>
         )

@@ -13,12 +13,18 @@ export default class MyApartmentIndex extends Component {
                                 <h3>{apartment.city}, {apartment.state}</h3>
                                 <br />
                                 <div id="my-buttons">
-                                    <Link to={`/apartmentshow/${apartment.id}`} className="button">
+                                    <Link
+                                        to={`/apartmentshow/${apartment.id}`}
+                                        className="button"
+                                    >
                                         More Info
                                     </Link>
-                                    <span onClick={() => { this.props.deleteApartment(apartment.id) }} className="button">
+                                    <span
+                                        onClick={() => { this.props.deleteApartment(apartment.id) }}
+                                        className="button"
+                                    >
                                         Remove Listing
-                                </span>
+                                    </span>
                                 </div>
                             </div>
                         )

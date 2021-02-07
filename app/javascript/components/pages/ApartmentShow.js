@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 export default class ApartmentShow extends Component {
-
     render() {
         const { apartment, current_user, logged_in } = this.props
         return (
