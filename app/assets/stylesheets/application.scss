@@ -157,6 +157,10 @@ h1 {
 
 h3 {
   font-size: 3vh;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
 }
 
 p {
