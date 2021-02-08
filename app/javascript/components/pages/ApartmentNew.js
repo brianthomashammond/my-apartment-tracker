@@ -69,11 +69,63 @@ export default class ApartmentNew extends Component {
                                     <FormGroup>
                                         <Label>State</Label>
                                         <Input
-                                        type="text"
+                                        type="select"
                                         name="state"
                                         onChange={this.handleChange}
                                         value={this.state.form.state}
-                                        />
+                                        >
+                                            <option selected disabled hidden></option>
+                                            <option>AL</option>
+                                            <option>AK</option>
+                                            <option>AZ</option>
+                                            <option>AR</option>
+                                            <option>CA</option>
+                                            <option>CO</option>
+                                            <option>CT</option>
+                                            <option>DE</option>
+                                            <option>FL</option>
+                                            <option>GA</option>
+                                            <option>HI</option>
+                                            <option>ID</option>
+                                            <option>IL</option>
+                                            <option>IN</option>
+                                            <option>IA</option>
+                                            <option>KS</option>
+                                            <option>KY</option>
+                                            <option>LA</option>
+                                            <option>ME</option>
+                                            <option>MD</option>
+                                            <option>MA</option>
+                                            <option>MI</option>
+                                            <option>MN</option>
+                                            <option>MS</option>
+                                            <option>MO</option>
+                                            <option>MT</option>
+                                            <option>NE</option>
+                                            <option>NV</option>
+                                            <option>NH</option>
+                                            <option>NJ</option>
+                                            <option>NM</option>
+                                            <option>NY</option>
+                                            <option>NC</option>
+                                            <option>ND</option>
+                                            <option>OH</option>
+                                            <option>OK</option>
+                                            <option>OR</option>
+                                            <option>PA</option>
+                                            <option>RI</option>
+                                            <option>SC</option>
+                                            <option>SD</option>
+                                            <option>TN</option>
+                                            <option>TX</option>
+                                            <option>UT</option>
+                                            <option>VT</option>
+                                            <option>VA</option>
+                                            <option>WA</option>
+                                            <option>WV</option>
+                                            <option>WI</option>
+                                            <option>WY</option>
+                                        </Input>
                                     </FormGroup>
                                 </Col>
                             </Row>
@@ -106,22 +158,49 @@ export default class ApartmentNew extends Component {
                                     <FormGroup>
                                         <Label>Bedrooms</Label>
                                         <Input
-                                        type="number"
+                                        type="select"
                                         name="bedrooms"
                                         onChange={this.handleChange}
                                         value={this.state.form.bedrooms}
-                                        />
+                                        >
+                                            <option selected disabled hidden></option>
+                                            <option>Studio</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                        </Input>
                                     </FormGroup>
                                 </Col>
                                 <Col>
                                     <FormGroup>
                                         <Label>Bathrooms</Label>
                                         <Input
-                                        type="number"
+                                        type="select"
                                         name="bathrooms"
                                         onChange={this.handleChange}
                                         value={this.state.form.bathrooms}
-                                        />
+                                        >
+                                            <option selected disabled hidden></option>
+                                            <option>.5</option>
+                                            <option>1</option>
+                                            <option>1.5</option>
+                                            <option>2</option>
+                                            <option>2.5</option>
+                                            <option>3</option>
+                                            <option>3.5</option>
+                                            <option>4</option>
+                                            <option>4.5</option>
+                                            <option>5</option>
+                                            <option>5.5</option>
+                                            <option>6</option>
+                                        </Input>
                                     </FormGroup>
                                 </Col>
                                 <Col>
