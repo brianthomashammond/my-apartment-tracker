@@ -2,11 +2,14 @@ import React, { Component } from 'react'
 import { Col } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
+import image from '../assets/grant-lemons-jTCLppdwSEc-unsplash.jpg'
+
+
 export default class ApartmentIndex extends Component {
     render() {
         return (
             <>
-                <div id="index-body">
+                <div id="index-body" style={{ backgroundImage: `url(${image})` }}>
                     {this.props.apartments.map((apartment, index) => {
                         return (
                             <div key={index} className="index-card">

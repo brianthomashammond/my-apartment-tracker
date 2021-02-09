@@ -10,6 +10,8 @@ import {
 } from 'reactstrap'
 import { Redirect } from "react-router-dom";
 
+import image from '../assets/grant-lemons-jTCLppdwSEc-unsplash.jpg'
+
 export default class ApartmentEdit extends Component {
     constructor(props) {
         super(props)
@@ -45,7 +47,7 @@ export default class ApartmentEdit extends Component {
     render() {
         return (
             <>
-                <div className="body-container">
+                <div className="body-container" style={{ backgroundImage: `url(${image})` }}>
                     <div className="form">
                         <Form>
                             <Row>

@@ -12,6 +12,7 @@
   background-color: slategrey;
   color: whitesmoke;
   position: fixed;
+  z-index: 2;
   padding-top: 1.25vh;
   padding-left: 2vh;
   top: 0;
@@ -36,6 +37,8 @@
 #index-body {
   display: flex;
   flex-wrap: wrap;
+  background-size: cover;
+  height: 100vh;
   width: 100vw;
   justify-content: space-around;
   align-items: center;
@@ -107,11 +110,13 @@
 
 .index-card {
   text-align: center;
+  align-items: center;
+  background-color: white;
   border: 1px solid slategrey;
   border-radius: 5px;
   margin: 1vh 1vw 1vh 1vw;
   padding: 10px;
-  width: 20rem;
+  width: 17.5rem;
 }
 
 .my-buttons {

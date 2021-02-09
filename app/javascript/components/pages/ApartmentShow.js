@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
+import image from '../assets/grant-lemons-jTCLppdwSEc-unsplash.jpg'
+
 export default class ApartmentShow extends Component {
     render() {
         const { apartment, current_user, logged_in } = this.props
         return (
             <>
-                <div className="show-body">
+                <div className="show-body" style={{ backgroundImage: `url(${image})` }}>
                     <h3>{apartment.street}</h3>
                     <p>{apartment.city}, {apartment.state}</p>
                     <p>Manager Name: {apartment.manager}</p>
