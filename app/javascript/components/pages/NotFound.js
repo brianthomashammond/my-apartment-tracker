@@ -7,9 +7,11 @@ export default class NotFound extends Component {
         return (
             <>
                 <div id="notFound" style={{ backgroundImage: `url(${image})` }}>
-                    <div className="index-card">
-                        <h3>Selection Not Found</h3>
-                        <h3>Please Navigate Below</h3>
+                    <div className="show-body">
+                        <div className="index-card">
+                            <h3>Selection Not Found</h3>
+                            <h3>Please Navigate Below</h3>
+                        </div>
                     </div>
                 </div>
             </>
