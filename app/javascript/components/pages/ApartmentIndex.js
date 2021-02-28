@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom'
 
 import image from '../assets/grant-lemons-jTCLppdwSEc-unsplash.jpg'
 
-const ApartmentIndex = (props) => {
-    const { apartments } = props
-
+const ApartmentIndex = ({ apartments }) => {
     return (
         <div id="index-body" style={{ backgroundImage: `url(${image})` }}>
             {apartments.map((apartment, index) => {
