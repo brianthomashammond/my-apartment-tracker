@@ -1,14 +1,12 @@
 import React from 'react'
 import { Nav, NavItem } from 'reactstrap'
 
-const Footer = (props) => {
-    const {
-        logged_in,
-        sign_in_route,
-        sign_out_route,
-        sign_up_route,
-    } = props
-    
+const Footer = ({ 
+    logged_in,
+    sign_in_route,
+    sign_out_route,
+    sign_up_route,
+}) => {
     return (
         <div id="footer">
             <Nav>
