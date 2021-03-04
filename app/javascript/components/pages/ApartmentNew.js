@@ -7,16 +7,25 @@ import image from '../assets/grant-lemons-jTCLppdwSEc-unsplash.jpg'
 const ApartmentNew = ({ createNewApartment, current_user}) => {
     const [success, setSuccess] =  useState("false")
     const [street, setStreet] = useState("")
+    const [city, setCity] = useState("")
+    const [usstate, setUsstate] = useState("")
+    const [manager, setManager] = useState("")
+    const [email, setEmail] = useState("")
+    const [price, setPrice] = useState("")
+    const [bedrooms, setBedrooms] = useState("")
+    const [bathrooms, setBathrooms] = useState("")
+    const [pets, setPets] = useState("no")
+
     let form = {
                 street: street,
-                city: "",
-                state: "",
-                manager: "",
-                email: "",
-                price: "",
-                bedrooms: "",
-                bathrooms: "",
-                pets: "no",
+                city: city,
+                state: usstate,
+                manager: manager,
+                email: email,
+                price: price,
+                bedrooms: bedrooms,
+                bathrooms: bathrooms,
+                pets: pets,
                 user_id: current_user.id,
     }
 
@@ -62,7 +71,7 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                         <Input
                                         type="text"
                                         name="city"
-                                        onChange={handleChange}
+                                        onChange={e => setCity(e.target.value)}
                                         value={form.city}
                                         />
                                     </FormGroup>
@@ -73,7 +82,7 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                         <Input
                                         type="select"
                                         name="state"
-                                        onChange={handleChange}
+                                        onChange={e => setUsstate(e.target.value)}
                                         value={form.state}
                                         >
                                             <option selected disabled hidden></option>
@@ -138,7 +147,7 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                         <Input
                                         type="text"
                                         name="manager"
-                                        onChange={handleChange}
+                                        onChange={e => setManager(e.target.value)}
                                         value={form.manager}
                                         />
                                     </FormGroup>
@@ -149,7 +158,7 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                         <Input
                                         type="email"
                                         name="email"
-                                        onChange={handleChange}
+                                        onChange={e => setEmail(e.target.value)}
                                         value={form.email}
                                         />
                                     </FormGroup>
@@ -162,7 +171,7 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                         <Input
                                         type="select"
                                         name="bedrooms"
-                                        onChange={handleChange}
+                                        onChange={e => setBedrooms(e.target.value)}
                                         value={form.bedrooms}
                                         >
                                             <option selected disabled hidden></option>
@@ -186,7 +195,7 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                         <Input
                                         type="select"
                                         name="bathrooms"
-                                        onChange={handleChange}
+                                        onChange={e => setBathrooms(e.target.value)}
                                         value={form.bathrooms}
                                         >
                                             <option selected disabled hidden></option>
@@ -217,7 +226,7 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                                         name="pets"
                                                         value="Yes"
                                                         checked={form.pets === "Yes"}
-                                                        onChange={handleChange}
+                                                        onChange={e => setPets(e.target.value)}
                                                         class="custom-control-input custom-control-input-black"
                                                         id="customCheck1"
                                                         />
@@ -236,7 +245,7 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                                         name="pets"
                                                         value="No"
                                                         checked={form.pets === "No"}
-                                                        onChange={handleChange}
+                                                        onChange={e => setPets(e.target.value)}
                                                         class="custom-control-input custom-control-input-black"
                                                         id="customCheck2"
                                                         />
@@ -258,7 +267,7 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                         <Input
                                         type="text"
                                         name="price"
-                                        onChange={handleChange}
+                                        onChange={e => setPrice(e.target.value)}
                                         value={form.price}
                                         />
                                     </FormGroup>
