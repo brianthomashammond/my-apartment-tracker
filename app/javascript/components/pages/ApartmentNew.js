@@ -5,7 +5,7 @@ import { Redirect } from "react-router-dom";
 import image from '../assets/grant-lemons-jTCLppdwSEc-unsplash.jpg'
 
 const ApartmentNew = ({ createNewApartment, current_user}) => {
-    const [success, setSuccess] =  useState("false")
+    const [success, setSuccess] =  useState(false)
     const [street, setStreet] = useState("")
     const [city, setCity] = useState("")
     const [usstate, setUsstate] = useState("")
@@ -277,7 +277,7 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                 <Button
                                 name="submit"
                                 className="button"
-                                onClick={() => handleSubmit}
+                                onClick={handleSubmit}
                                 >
                                     Add a New Listing
                                 </Button>
@@ -286,8 +286,7 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                     </div>
                 </div>
             </div>
-            {/* {if (success === true) {<Redirect to="/myapartmentindex" />}} */}
-            {console.log(success)}
+            {success && <Redirect to="/myapartmentindex" />}
         </>
     )
 }
