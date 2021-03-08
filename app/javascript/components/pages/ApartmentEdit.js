@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Button,
     Form,
@@ -6,31 +6,28 @@ import {
     Input,
     Label,
     Row,
-    Col
+    Col,
 } from 'reactstrap'
-import { Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom"
 
 import image from '../assets/grant-lemons-jTCLppdwSEc-unsplash.jpg'
 
-export default class ApartmentEdit extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            form: {
-                street: this.props.apartment.street,
-                city: this.props.apartment.city,
-                state: this.props.apartment.state,
-                manager: this.props.apartment.manager,
-                email: this.props.apartment.email,
-                price: this.props.apartment.price,
-                bedrooms: this.props.apartment.bedrooms,
-                bathrooms: this.props.apartment.bathrooms,
-                pets: this.props.apartment.pets,
-                user_id: this.props.current_user.id,
-            },
-            success: false
-        }
-    }
+const ApartmentEdit = ({ apartment, current_user, updateApartment}) => {
+    l
+    et form = {
+        street: apartment.street,
+        city: apartment.city,
+        state: apartment.state,
+        manager: apartment.manager,
+        email: apartment.email,
+        price: apartment.price,
+        bedrooms: apartment.bedrooms,
+        bathrooms: apartment.bathrooms,
+        pets: apartment.pets,
+        user_id: current_user.id,
+    },
+    success: false
+
 
     handleChange = (e) => {
         let { form } = this.state
@@ -273,3 +270,5 @@ export default class ApartmentEdit extends Component {
         )
     }
 }
+
+export default ApartmentEdit

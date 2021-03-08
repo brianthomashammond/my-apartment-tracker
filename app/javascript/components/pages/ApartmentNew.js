@@ -1,6 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Button, Form, FormGroup, Input, Label, Row, Col } from "reactstrap";
-import { Redirect } from "react-router-dom";
+import React, { useEffect, useState } from "react"
+import {
+    Button,
+    Form,
+    FormGroup,
+    Input,
+    Label,
+    Row,
+    Col,
+} from "reactstrap"
+import { Redirect } from "react-router-dom"
 
 import image from '../assets/grant-lemons-jTCLppdwSEc-unsplash.jpg'
 
@@ -286,7 +294,7 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                     </div>
                 </div>
             </div>
-            {success && <Redirect to="/myapartmentindex" />}
+            { success && <Redirect to="/myapartmentindex" /> }
         </>
     )
 }
