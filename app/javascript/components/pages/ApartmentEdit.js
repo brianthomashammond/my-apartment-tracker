@@ -13,8 +13,18 @@ import { Redirect } from "react-router-dom"
 import image from '../assets/grant-lemons-jTCLppdwSEc-unsplash.jpg'
 
 const ApartmentEdit = ({ apartment, current_user, updateApartment}) => {
-    l
-    et form = {
+    const [success, setSuccess] =  useState(false)
+    const [street, setStreet] = useState("")
+    const [city, setCity] = useState("")
+    const [usstate, setUsstate] = useState("")
+    const [manager, setManager] = useState("")
+    const [email, setEmail] = useState("")
+    const [price, setPrice] = useState("")
+    const [bedrooms, setBedrooms] = useState("")
+    const [bathrooms, setBathrooms] = useState("")
+    const [pets, setPets] = useState("no")
+
+    let form = {
         street: apartment.street,
         city: apartment.city,
         state: apartment.state,
@@ -25,9 +35,7 @@ const ApartmentEdit = ({ apartment, current_user, updateApartment}) => {
         bathrooms: apartment.bathrooms,
         pets: apartment.pets,
         user_id: current_user.id,
-    },
-    success: false
-
+    }
 
     handleChange = (e) => {
         let { form } = this.state
