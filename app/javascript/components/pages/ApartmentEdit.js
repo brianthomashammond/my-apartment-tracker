@@ -14,20 +14,20 @@ import image from '../assets/grant-lemons-jTCLppdwSEc-unsplash.jpg'
 
 const ApartmentEdit = ({ apartment, current_user, updateApartment}) => {
     const [success, setSuccess] =  useState(false)
-    const [street, setStreet] = useState("")
-    const [city, setCity] = useState("")
-    const [usstate, setUsstate] = useState("")
-    const [manager, setManager] = useState("")
-    const [email, setEmail] = useState("")
-    const [price, setPrice] = useState("")
-    const [bedrooms, setBedrooms] = useState("")
-    const [bathrooms, setBathrooms] = useState("")
-    const [pets, setPets] = useState("no")
+    const [street, setStreet] = useState(apartment.street)
+    const [city, setCity] = useState(apartment.city)
+    const [usstate, setUsstate] = useState(apartment.usstate)
+    const [manager, setManager] = useState(apartment.manager)
+    const [email, setEmail] = useState(apartment.email)
+    const [price, setPrice] = useState(apartment.price)
+    const [bedrooms, setBedrooms] = useState(apartment.bedrooms)
+    const [bathrooms, setBathrooms] = useState(apartment.bathrooms)
+    const [pets, setPets] = useState(apartment.pets)
 
     let form = {
         street: street,
         city: city,
-        state: usstate,
+        usState: usstate,
         manager: manager,
         email: email,
         price: price,
@@ -61,7 +61,7 @@ const ApartmentEdit = ({ apartment, current_user, updateApartment}) => {
                                             type="text"
                                             name="street"
                                             onChange={e => setStreet(e.target.value)}
-                                            value={form.street}
+                                            value={street}
                                         />
                                     </FormGroup>
                                 </Col>
@@ -74,7 +74,7 @@ const ApartmentEdit = ({ apartment, current_user, updateApartment}) => {
                                             type="text"
                                             name="city"
                                             onChange={e => setCity(e.target.value)}
-                                            value={form.city}
+                                            value={city}
                                         />
                                     </FormGroup>
                                 </Col>
@@ -85,7 +85,7 @@ const ApartmentEdit = ({ apartment, current_user, updateApartment}) => {
                                             type="select"
                                             name="state"
                                             onChange={e => setUsstate(e.target.value)}
-                                            value={form.state}
+                                            value={usstate}
                                         >
                                             <option selected disabled hidden></option>
                                             <option>AL</option>
@@ -150,7 +150,7 @@ const ApartmentEdit = ({ apartment, current_user, updateApartment}) => {
                                             type="text"
                                             name="manager"
                                             onChange={e => setManager(e.target.value)}
-                                            value={form.manager}
+                                            value={manager}
                                         />
                                     </FormGroup>
                                 </Col>
@@ -161,7 +161,7 @@ const ApartmentEdit = ({ apartment, current_user, updateApartment}) => {
                                             type="email"
                                             name="email"
                                             onChange={e => setEmail(e.target.value)}
-                                            value={form.email}
+                                            value={email}
                                         />
                                     </FormGroup>
                                 </Col>
@@ -174,7 +174,7 @@ const ApartmentEdit = ({ apartment, current_user, updateApartment}) => {
                                             type="select"
                                             name="bedrooms"
                                             onChange={e => setBedrooms(e.target.value)}
-                                            value={form.bedrooms}
+                                            value={bedrooms}
                                         >
                                             <option selected disabled hidden></option>
                                             <option>Studio</option>
@@ -198,7 +198,7 @@ const ApartmentEdit = ({ apartment, current_user, updateApartment}) => {
                                             type="select"
                                             name="bathrooms"
                                             onChange={e => setBathrooms(e.target.value)}
-                                            value={form.bathrooms}
+                                            value={bathrooms}
                                         >
                                             <option selected disabled hidden></option>
                                             <option>.5</option>
@@ -227,7 +227,7 @@ const ApartmentEdit = ({ apartment, current_user, updateApartment}) => {
                                                             type="radio"
                                                             name="pets"
                                                             value="Yes"
-                                                            checked={form.pets === "Yes"}
+                                                            checked={pets === "Yes"}
                                                             onChange={e => setPets(e.target.value)}
                                                             class="custom-control-input custom-control-input-black" id="customCheck1"
                                                         />
@@ -245,7 +245,7 @@ const ApartmentEdit = ({ apartment, current_user, updateApartment}) => {
                                                             type="radio"
                                                             name="pets"
                                                             value="No"
-                                                            checked={form.pets === "No"}
+                                                            checked={pets === "No"}
                                                             onChange={e => setPets(e.target.value)} class="custom-control-input custom-control-input-black" id="customCheck2"
                                                         />
                                                         <label
@@ -267,7 +267,7 @@ const ApartmentEdit = ({ apartment, current_user, updateApartment}) => {
                                             type="text"
                                             name="price"
                                             onChange={e => setPrice(e.target.value)}
-                                            value={form.price}
+                                            value={price}
                                         />
                                     </FormGroup>
                                 </Col>
