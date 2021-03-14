@@ -13,7 +13,6 @@ import { Redirect } from "react-router-dom"
 import image from '../assets/grant-lemons-jTCLppdwSEc-unsplash.jpg'
 
 const ApartmentNew = ({ createNewApartment, current_user}) => {
-    const [success, setSuccess] =  useState(false)
     const [street, setStreet] = useState("")
     const [city, setCity] = useState("")
     const [usstate, setUsstate] = useState("")
@@ -23,6 +22,7 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
     const [bedrooms, setBedrooms] = useState("")
     const [bathrooms, setBathrooms] = useState("")
     const [pets, setPets] = useState("no")
+    const [success, setSuccess] =  useState(false)
 
     let form = {
                 street: street,
@@ -35,12 +35,6 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                 bathrooms: bathrooms,
                 pets: pets,
                 user_id: current_user.id,
-    }
-
-    const handleChange = (e) => {
-        console.log(form)
-        console.log(e)
-        form[e.target.name] = e.target.value;
     }
 
     const handleSubmit = (e) => {
@@ -64,10 +58,10 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                     <FormGroup>
                                         <Label>Street</Label>
                                         <Input
-                                        type="text"
-                                        name="street"
-                                        onChange={e => setStreet(e.target.value)}
-                                        value={form.street}
+                                            type="text"
+                                            name="street"
+                                            onChange={e => setStreet(e.target.value)}
+                                            value={form.street}
                                         />
                                     </FormGroup>
                                 </Col>
@@ -77,10 +71,10 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                     <FormGroup>
                                         <Label>City</Label>
                                         <Input
-                                        type="text"
-                                        name="city"
-                                        onChange={e => setCity(e.target.value)}
-                                        value={form.city}
+                                            type="text"
+                                            name="city"
+                                            onChange={e => setCity(e.target.value)}
+                                            value={form.city}
                                         />
                                     </FormGroup>
                                 </Col>
@@ -88,10 +82,10 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                     <FormGroup>
                                         <Label>State</Label>
                                         <Input
-                                        type="select"
-                                        name="state"
-                                        onChange={e => setUsstate(e.target.value)}
-                                        value={form.state}
+                                            type="select"
+                                            name="state"
+                                            onChange={e => setUsstate(e.target.value)}
+                                            value={form.state}
                                         >
                                             <option selected disabled hidden></option>
                                             <option>AL</option>
@@ -153,10 +147,10 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                     <FormGroup>
                                         <Label>Manager</Label>
                                         <Input
-                                        type="text"
-                                        name="manager"
-                                        onChange={e => setManager(e.target.value)}
-                                        value={form.manager}
+                                            type="text"
+                                            name="manager"
+                                            onChange={e => setManager(e.target.value)}
+                                            value={form.manager}
                                         />
                                     </FormGroup>
                                 </Col>
@@ -164,10 +158,10 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                     <FormGroup>
                                         <Label>Email</Label>
                                         <Input
-                                        type="email"
-                                        name="email"
-                                        onChange={e => setEmail(e.target.value)}
-                                        value={form.email}
+                                            type="email"
+                                            name="email"
+                                            onChange={e => setEmail(e.target.value)}
+                                            value={form.email}
                                         />
                                     </FormGroup>
                                 </Col>
@@ -177,10 +171,10 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                     <FormGroup>
                                         <Label>Bedrooms</Label>
                                         <Input
-                                        type="select"
-                                        name="bedrooms"
-                                        onChange={e => setBedrooms(e.target.value)}
-                                        value={form.bedrooms}
+                                            type="select"
+                                            name="bedrooms"
+                                            onChange={e => setBedrooms(e.target.value)}
+                                            value={form.bedrooms}
                                         >
                                             <option selected disabled hidden></option>
                                             <option>Studio</option>
@@ -201,10 +195,10 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                     <FormGroup>
                                         <Label>Bathrooms</Label>
                                         <Input
-                                        type="select"
-                                        name="bathrooms"
-                                        onChange={e => setBathrooms(e.target.value)}
-                                        value={form.bathrooms}
+                                            type="select"
+                                            name="bathrooms"
+                                            onChange={e => setBathrooms(e.target.value)}
+                                            value={form.bathrooms}
                                         >
                                             <option selected disabled hidden></option>
                                             <option>.5</option>
@@ -230,17 +224,17 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                                 <Col>
                                                     <div class="custom-control custom-radio custom-radio-black radio-row">
                                                         <input
-                                                        type="radio"
-                                                        name="pets"
-                                                        value="Yes"
-                                                        checked={form.pets === "Yes"}
-                                                        onChange={e => setPets(e.target.value)}
-                                                        class="custom-control-input custom-control-input-black"
-                                                        id="customCheck1"
+                                                            type="radio"
+                                                            name="pets"
+                                                            value="Yes"
+                                                            checked={form.pets === "Yes"}
+                                                            onChange={e => setPets(e.target.value)}
+                                                            class="custom-control-input custom-control-input-black"
+                                                            id="customCheck1"
                                                         />
                                                         <label
-                                                        class="custom-control-label"
-                                                        for="customCheck1"
+                                                            class="custom-control-label"
+                                                            for="customCheck1"
                                                         >
                                                             Yes
                                                         </label>
@@ -249,17 +243,17 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                                 <Col>
                                                     <div class="custom-control custom-radio custom-radio-black">
                                                         <input
-                                                        type="radio"
-                                                        name="pets"
-                                                        value="No"
-                                                        checked={form.pets === "No"}
-                                                        onChange={e => setPets(e.target.value)}
-                                                        class="custom-control-input custom-control-input-black"
-                                                        id="customCheck2"
+                                                            type="radio"
+                                                            name="pets"
+                                                            value="No"
+                                                            checked={form.pets === "No"}
+                                                            onChange={e => setPets(e.target.value)}
+                                                            class="custom-control-input custom-control-input-black"
+                                                            id="customCheck2"
                                                         />
                                                         <label
-                                                        class="custom-control-label"
-                                                        for="customCheck2"
+                                                            class="custom-control-label"
+                                                            for="customCheck2"
                                                         >
                                                             No
                                                         </label>
@@ -273,19 +267,19 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                                     <FormGroup>
                                         <Label>Price</Label>
                                         <Input
-                                        type="text"
-                                        name="price"
-                                        onChange={e => setPrice(e.target.value)}
-                                        value={form.price}
+                                            type="text"
+                                            name="price"
+                                            onChange={e => setPrice(e.target.value)}
+                                            value={form.price}
                                         />
                                     </FormGroup>
                                 </Col>
                             </Row>
                             <div className="form-button-wrapper">
                                 <Button
-                                name="submit"
-                                className="button"
-                                onClick={handleSubmit}
+                                    name="submit"
+                                    className="button"
+                                    onClick={handleSubmit}
                                 >
                                     Add a New Listing
                                 </Button>
@@ -294,7 +288,7 @@ const ApartmentNew = ({ createNewApartment, current_user}) => {
                     </div>
                 </div>
             </div>
-            { success && <Redirect to="/myapartmentindex" /> }
+            {success && <Redirect to="/myapartmentindex" />}
         </>
     )
 }
