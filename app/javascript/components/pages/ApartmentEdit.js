@@ -12,7 +12,7 @@ import { Redirect } from "react-router-dom"
 
 import image from '../assets/grant-lemons-jTCLppdwSEc-unsplash.jpg'
 
-const ApartmentEdit = ({ apartment, current_user, updateApartment}) => {
+const ApartmentEdit = ({ apartment, current_user, updateApartment }) => {
     const [success, setSuccess] =  useState(false)
     const [street, setStreet] = useState(apartment.street)
     const [city, setCity] = useState(apartment.city)

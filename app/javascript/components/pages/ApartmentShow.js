@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom'
 
 import image from '../assets/grant-lemons-jTCLppdwSEc-unsplash.jpg'
 
-const ApartmentShow = (props) => {
-    const { apartment, current_user, logged_in } = props
+const ApartmentShow = ({ apartment, current_user, logged_in }) => {
 
     return (
         <div className="form-background" style={{ backgroundImage: `url(${image})` }}>
