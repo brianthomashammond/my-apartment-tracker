@@ -45,56 +45,53 @@ export default class App extends Component {
         })
     }
 
-    createNewApartment = (apartment) => {
-        return fetch("/apartments", {
-            body: JSON.stringify(apartment),
-            headers: {
-                "Content-Type": "application/json"
-            },
-            method: "POST"
-        })
-        .then(response => {
+    createNewApartment = async (apartment) => {
+        try {
+            const response = await fetch("/apartments", {
+                body: JSON.stringify(apartment),
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                method: "POST"
+            })
             this.getApartments()
-        })
-        .catch(errors => {
+        } catch (errors) {
             console.log("create errors:", errors)
-        })
+        }
     }
 
-    updateApartment = (apartment, id) => {
-        return fetch(`/apartments/${id}`, {
-            body: JSON.stringify(apartment),
-            headers: {
-                "Content-Type": "application/json"
-            },
-            method: "PATCH"
-        })
-        .then(response => {
+    updateApartment = async (apartment, id) => {
+        try {
+            const response = await fetch(`/apartments/${id}`, {
+                body: JSON.stringify(apartment),
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                method: "PATCH"
+            })
             if (response.status === 200) {
                 this.getApartments()
             }
             return response
-        })
-        .catch(errors => {
+        } catch (errors) {
             console.log("edit errors", errors)
-        })
+        }
     }
 
-    deleteApartment = (id) => {
-        return fetch(`apartments/${id}`, {
-            headers: {
-                "Content-Type": "application/json"
-            },
-            method: "DELETE"
-        })
-        .then(response => {
+    deleteApartment = async (id) => {
+        try {
+            const response = await fetch(`apartments/${id}`, {
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                method: "DELETE"
+            })
             alert("Remove this listing?")
             this.getApartments()
             return response
-        })
-        .catch(errors => {
-            console.log("delete errors", errors);
-        })
+        } catch (errors) {
+            console.log("delete errors", errors)
+        }
     }
 
     render() {
