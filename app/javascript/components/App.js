@@ -79,18 +79,20 @@ export default class App extends Component {
     }
 
     deleteApartment = async (id) => {
-        try {
-            const response = await fetch(`apartments/${id}`, {
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                method: "DELETE"
-            })
-            alert("Remove this listing?")
-            this.getApartments()
-            return response
-        } catch (errors) {
-            console.log("delete errors", errors)
+        const choice = confirm('Are you sure you want to remove this listing?')
+        if (choice === true) {
+            try {
+                const response = await fetch(`apartments/${id}`, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    method: "DELETE"
+                })
+                this.getApartments()
+                return response
+            } catch (errors) {
+                console.log("delete errors", errors)
+            }
         }
     }
 
